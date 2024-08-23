@@ -1,23 +1,13 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: [
-    "react-app",
-    "prettier",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    // 'plugin:react/jsx-runtime',
-    // 'plugin:react-hooks/recommended',
-  ],
-  // ignorePatterns: ['dist', '.eslintrc.cjs'],
-  // parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  // settings: { react: { version: '18.2' } },
+  extends: ["eslint:recommended", "plugin:react/recommended", "react-app", "prettier"],
   plugins: ["prettier"],
   rules: {
-    "prettier/prettier": "error",
-    //   'react-refresh/only-export-components': [
-    //     'warn',
-    //     { allowConstantExport: true },
-    //   ],
+    "prettier/prettier": "warn", // Prettier formatting warnings
+    "react/react-in-jsx-scope": "off", // React 17+ doesn't require React in scope
+    "react/prop-types": "off",
+    "no-unused-vars": "warn", // Warn for unused variables
+    "react/no-unescaped-entities": "warn", // Warn for unescaped entities in JSX
   },
 };

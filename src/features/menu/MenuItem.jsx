@@ -8,6 +8,7 @@ function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
   function handleAddToCart() {
+    console.log("test");
     const newItem = {
       id,
       name,
@@ -41,7 +42,7 @@ function MenuItem({ pizza }) {
           )}
 
           {!soldOut && (
-            <Button type="small" onClick={handleAddToCart}>
+            <Button type="small" onClick={() => handleAddToCart()}>
               Add to cart
             </Button>
           )}

@@ -19,14 +19,12 @@ export default function Button({ children, disabled, to, type, onClick }) {
     );
   }
 
-  if (onClick) {
-    <button className={styles[type]} disabled={disabled} onClick={onClick}>
-      {children}
-    </button>;
-  }
-
   return (
-    <button className={styles[type]} disabled={disabled}>
+    <button
+      className={styles[type]}
+      disabled={disabled}
+      onClick={onClick ? () => onClick() : undefined}
+    >
       {children}
     </button>
   );

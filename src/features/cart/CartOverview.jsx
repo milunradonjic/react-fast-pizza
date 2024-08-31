@@ -6,9 +6,6 @@ function CartOverview() {
   const totalCartQuantity = useSelector(getTotalCartQuantity);
   const totalCartPrice = useSelector(getTotalCartPrice);
 
-  console.log("totalCartQuantity", totalCartQuantity);
-  console.log("totalCartPrice", totalCartPrice);
-
   if (!totalCartQuantity) return null;
 
   return (

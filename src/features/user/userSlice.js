@@ -41,14 +41,15 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(
-        fetchAddress.pending,
-        (state, action) => (state.status = "loading"),
-      )
+      .addCase(fetchAddress.pending, (state, action) => {
+        state.status = "loading";
+        state.error = "";
+      })
       .addCase(fetchAddress.fulfilled, (state, action) => {
         state.position = action.payload.position;
         state.address = action.payload.address;
         state.status = "idle";
+        state.error = "";
       })
       .addCase(fetchAddress.rejected, (state, action) => {
         state.status = "error";
